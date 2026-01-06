@@ -1,5 +1,627 @@
 [
   {
+    "title": "No Good Deed (2014)",
+    "year": 2014,
+    "subtitle_list": [
+      {
+        "id": 13477920,
+        "filename": "No Good Deed 2014 albshare",
+        "download_link": "https://dl.opensubtitles.org/en/download/sub/13477920"
+      }
+    ],
+    "date_uploaded": "2026-01-06 17:00:39",
+    "yts_data": {
+      "id": 2188,
+      "url": "https://yts.lt/movies/no-good-deed-2014?phoe3BLdv9hs8vnw74sVODfGcsU5UNqgEY2eGfbf5R8zfeY",
+      "imdb_code": "tt2011159",
+      "title": "No Good Deed",
+      "title_english": "No Good Deed",
+      "title_long": "No Good Deed (2014)",
+      "slug": "no-good-deed-2014",
+      "year": 2014,
+      "rating": 5.6,
+      "runtime": 84,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Crime",
+        "Drama",
+        "Horror",
+        "Thriller"
+      ],
+      "like_count": 39,
+      "description_intro": "A lonely mother invites a handsome car-accident victim into her home. Desperate for a little attention, she doesn't realize she's entertaining a sociopathic, yet charming, escaped convict. In one terrifying night her life completely changes as she fights for her own life and the lives of her children in No Good Deed.—Anonymous",
+      "description_full": "Një i dënuar i arratisur, i paqëndrueshëm psikologjikisht, terrorizon një grua që është vetëm me dy fëmijët e saj.",
+      "yt_trailer_code": "ro7Oyop7Jak",
+      "language": "en",
+      "mpa_rating": "",
+      "background_image": "https://yts.lt/assets/images/movies/No_Good_Deed_2014/background.jpg",
+      "small_cover_image": "https://yts.lt/assets/images/movies/No_Good_Deed_2014/small-cover.jpg",
+      "medium_cover_image": "https://yts.lt/assets/images/movies/No_Good_Deed_2014/medium-cover.jpg",
+      "large_cover_image": "https://yts.lt/assets/images/movies/No_Good_Deed_2014/large-cover.jpg",
+      "cast": [
+        {
+          "name": "Idris Elba",
+          "character_name": "Colin",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0252961.jpg",
+          "imdb_code": "0252961"
+        },
+        {
+          "name": "Taraji P. Henson",
+          "character_name": "Terry",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0378245.jpg",
+          "imdb_code": "0378245"
+        },
+        {
+          "name": "Mark Rhino Smith",
+          "character_name": "EMT",
+          "imdb_code": "1183986"
+        },
+        {
+          "name": "Stacey Turner",
+          "character_name": "Reporter",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm2407063.jpg",
+          "imdb_code": "2407063"
+        }
+      ],
+      "torrents": [
+        {
+          "url": "https://yts.lt/torrent/download/C63472309717EB048ED84FC713377ADA8BE45503?phoe3BLdv9hs8vnw74sVODfGcsU5UNqgEY2eGfbf5R8zfeY",
+          "hash": "C63472309717EB048ED84FC713377ADA8BE45503",
+          "quality": "720p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "700.19 MB",
+          "size_bytes": 734202429
+        },
+        {
+          "url": "https://yts.lt/torrent/download/608098F7533FC7D07111A813010230434A049104?phoe3BLdv9hs8vnw74sVODfGcsU5UNqgEY2eGfbf5R8zfeY",
+          "hash": "608098F7533FC7D07111A813010230434A049104",
+          "quality": "1080p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "1.24 GB",
+          "size_bytes": 1331439862
+        }
+      ]
+    }
+  },
+  {
+    "title": "Lone Survivor (2013)",
+    "year": 2013,
+    "subtitle_list": [
+      {
+        "id": 13477980,
+        "filename": "Lone Survivor 2013 albshare",
+        "download_link": "https://dl.opensubtitles.org/en/download/sub/13477980"
+      }
+    ],
+    "date_uploaded": "2026-01-06 17:00:35",
+    "yts_data": {
+      "id": 1907,
+      "url": "https://yts.lt/movies/lone-survivor-2013?gsa8slsqP77DUZXVA0Kz3C9qiOw3dv3HuRLSi90697c2hIw",
+      "imdb_code": "tt1091191",
+      "title": "Lone Survivor",
+      "title_english": "Lone Survivor",
+      "title_long": "Lone Survivor (2013)",
+      "slug": "lone-survivor-2013",
+      "year": 2013,
+      "rating": 7.5,
+      "runtime": 121,
+      "genres": [
+        "Action",
+        "Biography",
+        "Drama",
+        "History",
+        "Thriller",
+        "War"
+      ],
+      "like_count": 162,
+      "description_intro": "Marcus Luttrell, a Navy Seal, and his team set out on a mission to capture or kill notorious Taliban leader Ahmad Shah, in late June 2005. After running into mountain herders and capturing them, they were left with no choice but to follow their rules of engagement or be imprisoned. Now Marcus and his team are left to fight for their lives in one of the most valiant efforts of modern warfare.—Jose Tinto",
+      "description_full": "Fundi i qershorit 2005, Marcus Luttrell dhe ekipi i tij nisen në një mision për të kapur ose vrarë udhëheqësin famëkeq të Talibanëve, Ahmad Shah. Marcus dhe ekipi i tij detyrohen të luftojnë për jetën e tyre në një nga përpjekjet më të guximshme të luftës moderne.",
+      "yt_trailer_code": "0cPJ1ifjBDs",
+      "language": "en",
+      "mpa_rating": "",
+      "background_image": "https://yts.lt/assets/images/movies/Lone_Survivor_2013/background.jpg",
+      "small_cover_image": "https://yts.lt/assets/images/movies/Lone_Survivor_2013/small-cover.jpg",
+      "medium_cover_image": "https://yts.lt/assets/images/movies/Lone_Survivor_2013/medium-cover.jpg",
+      "large_cover_image": "https://yts.lt/assets/images/movies/Lone_Survivor_2013/large-cover.jpg",
+      "cast": [
+        {
+          "name": "Mark Wahlberg",
+          "character_name": "Marcus Luttrell",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0000242.jpg",
+          "imdb_code": "0000242"
+        },
+        {
+          "name": "Taylor Kitsch",
+          "character_name": "Michael Murphy",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm2018237.jpg",
+          "imdb_code": "2018237"
+        },
+        {
+          "name": "Alexander Ludwig",
+          "character_name": "Shane Patton",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm1573253.jpg",
+          "imdb_code": "1573253"
+        },
+        {
+          "name": "Eric Bana",
+          "character_name": "Erik Kristensen",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0051509.jpg",
+          "imdb_code": "0051509"
+        }
+      ],
+      "torrents": [
+        {
+          "url": "https://yts.lt/torrent/download/D21B6FEC98653908CA62002A16B149E8C6FC77C4?gsa8slsqP77DUZXVA0Kz3C9qiOw3dv3HuRLSi90697c2hIw",
+          "hash": "D21B6FEC98653908CA62002A16B149E8C6FC77C4",
+          "quality": "720p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "867.58 MB",
+          "size_bytes": 909723566
+        },
+        {
+          "url": "https://yts.lt/torrent/download/2127BD1C243C168C8AD59D839CF38E4BEA2DBBDB?gsa8slsqP77DUZXVA0Kz3C9qiOw3dv3HuRLSi90697c2hIw",
+          "hash": "2127BD1C243C168C8AD59D839CF38E4BEA2DBBDB",
+          "quality": "1080p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "1.84 GB",
+          "size_bytes": 1975684956
+        },
+        {
+          "url": "https://yts.lt/torrent/download/1CAA532BA3B0AEC7156A122E03BD4233A90214D6?gsa8slsqP77DUZXVA0Kz3C9qiOw3dv3HuRLSi90697c2hIw",
+          "hash": "1CAA532BA3B0AEC7156A122E03BD4233A90214D6",
+          "quality": "2160p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x265",
+          "bit_depth": "10",
+          "audio_channels": "5.1",
+          "size": "5.42 GB",
+          "size_bytes": 5819680686
+        }
+      ]
+    }
+  },
+  {
+    "title": "Crawl (2019)",
+    "year": 2019,
+    "subtitle_list": [
+      {
+        "id": 13478215,
+        "filename": "Crawl 2019 albshare",
+        "download_link": "https://dl.opensubtitles.org/en/download/sub/13478215"
+      }
+    ],
+    "date_uploaded": "2026-01-06 17:00:32",
+    "yts_data": {
+      "id": 13711,
+      "url": "https://yts.lt/movies/crawl-2019?ZeMcYbNir6xgXXme2BfRXR4zPB18_SLdQo1AtixfBUYqULw",
+      "imdb_code": "tt8364368",
+      "title": "Crawl",
+      "title_english": "Crawl",
+      "title_long": "Crawl (2019)",
+      "slug": "crawl-2019",
+      "year": 2019,
+      "rating": 6.1,
+      "runtime": 87,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Horror",
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "like_count": 404,
+      "description_intro": "Against all logic, competitive swimmer Haley drives into the mouth of a furiously destructive Category 5 hurricane on a collision course with her hometown of Florida. But the young woman is desperate to check in on her estranged father, Dave. Instead, an alligator-infested town awaits her. Now, trapped in the tangled mess of their flooded house's labyrinthine crawl space, the father and daughter must face an unexpected, unstoppable adversary: a merciless pair of six-metre predators silently stalking them. As Haley and Dave gasp for air in the claustrophobic basement, only their will to survive can help them stand a chance against the powerful jaws of the scaly enemy. And the question remains. Can they escape without being eaten alive?—Nick Riganas",
+      "description_full": "Aligatorë gjigantë rrethojnë një vajzë të re dhe babanë e saj teksa përmbytjet gllabërojnë shtëpinë e tyre.",
+      "yt_trailer_code": "H6MLJG0RdDE",
+      "language": "en",
+      "mpa_rating": "",
+      "background_image": "https://yts.lt/assets/images/movies/crawl_2019/background.jpg",
+      "small_cover_image": "https://yts.lt/assets/images/movies/crawl_2019/small-cover.jpg",
+      "medium_cover_image": "https://yts.lt/assets/images/movies/crawl_2019/medium-cover.jpg",
+      "large_cover_image": "https://yts.lt/assets/images/movies/crawl_2019/large-cover.jpg",
+      "cast": [
+        {
+          "name": "Savannah Steyn",
+          "character_name": "Lisa",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm8449814.jpg",
+          "imdb_code": "8449814"
+        },
+        {
+          "name": "Kaya Scodelario",
+          "character_name": "Haley",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm2546012.jpg",
+          "imdb_code": "2546012"
+        },
+        {
+          "name": "Barry Pepper",
+          "character_name": "Dave",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0001608.jpg",
+          "imdb_code": "0001608"
+        },
+        {
+          "name": "Morfydd Clark",
+          "character_name": "Beth",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm6077056.jpg",
+          "imdb_code": "6077056"
+        }
+      ],
+      "torrents": [
+        {
+          "url": "https://yts.lt/torrent/download/7AF8A4FF263EDEC135E60D0C8531B1D564D5AFEF?ZeMcYbNir6xgXXme2BfRXR4zPB18_SLdQo1AtixfBUYqULw",
+          "hash": "7AF8A4FF263EDEC135E60D0C8531B1D564D5AFEF",
+          "quality": "720p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "778.58 MB",
+          "size_bytes": 816400302
+        },
+        {
+          "url": "https://yts.lt/torrent/download/28A29A9696A5FEE3734B231E7058E86E0F068B23?ZeMcYbNir6xgXXme2BfRXR4zPB18_SLdQo1AtixfBUYqULw",
+          "hash": "28A29A9696A5FEE3734B231E7058E86E0F068B23",
+          "quality": "1080p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "1.37 GB",
+          "size_bytes": 1471026299
+        },
+        {
+          "url": "https://yts.lt/torrent/download/4DD88AB9891E783AA8723D503AB515EDE8AD8A55?ZeMcYbNir6xgXXme2BfRXR4zPB18_SLdQo1AtixfBUYqULw",
+          "hash": "4DD88AB9891E783AA8723D503AB515EDE8AD8A55",
+          "quality": "2160p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x265",
+          "bit_depth": "10",
+          "audio_channels": "5.1",
+          "size": "3.93 GB",
+          "size_bytes": 4219805368
+        },
+        {
+          "url": "https://yts.lt/torrent/download/3A6A262E6F897D0D265818956F2A1DBD9BC53C2F?ZeMcYbNir6xgXXme2BfRXR4zPB18_SLdQo1AtixfBUYqULw",
+          "hash": "3A6A262E6F897D0D265818956F2A1DBD9BC53C2F",
+          "quality": "720p",
+          "type": "web",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "775.73 MB",
+          "size_bytes": 813411860
+        },
+        {
+          "url": "https://yts.lt/torrent/download/629542EA6F26C10EEA0278325647DB5173CF908D?ZeMcYbNir6xgXXme2BfRXR4zPB18_SLdQo1AtixfBUYqULw",
+          "hash": "629542EA6F26C10EEA0278325647DB5173CF908D",
+          "quality": "1080p",
+          "type": "web",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "1.37 GB",
+          "size_bytes": 1471026299
+        }
+      ]
+    }
+  },
+  {
+    "title": "The Bucket List (2007)",
+    "year": 2007,
+    "subtitle_list": [
+      {
+        "id": 13478268,
+        "filename": "The Bucket List 2007 albshare",
+        "download_link": "https://dl.opensubtitles.org/en/download/sub/13478268"
+      }
+    ],
+    "date_uploaded": "2026-01-06 17:00:28",
+    "yts_data": {
+      "id": 3118,
+      "url": "https://yts.lt/movies/the-bucket-list-2007?EISKRwIP2HsyovY1nSvxRjPom3CMZ5ujOfUgPQNVeJMB_84",
+      "imdb_code": "tt0825232",
+      "title": "The Bucket List",
+      "title_english": "The Bucket List",
+      "title_long": "The Bucket List (2007)",
+      "slug": "the-bucket-list-2007",
+      "year": 2007,
+      "rating": 7.3,
+      "runtime": 97,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Comedy",
+        "Drama"
+      ],
+      "like_count": 104,
+      "description_intro": "Corporate billionaire Edward Cole and working class mechanic Carter Chambers have nothing in common except for their terminal illnesses. While sharing a hospital room together, they decide to leave it and do all the things they have ever wanted to do before they die according to their bucket list. In the process, both of them heal each other, become unlikely friends, and ultimately find joy in life.—r2k443",
+      "description_full": "Dy burra të sëmurë rëndë largohen nga një spital kanceri dhe nisen për një udhëtim rrugor me një listë dëshirash për gjëra që duan të bëjnë para se të vdesin.",
+      "yt_trailer_code": "f-eyQswdc-c",
+      "language": "en",
+      "mpa_rating": "",
+      "background_image": "https://yts.lt/assets/images/movies/The_Bucket_List_2007/background.jpg",
+      "small_cover_image": "https://yts.lt/assets/images/movies/The_Bucket_List_2007/small-cover.jpg",
+      "medium_cover_image": "https://yts.lt/assets/images/movies/The_Bucket_List_2007/medium-cover.jpg",
+      "large_cover_image": "https://yts.lt/assets/images/movies/The_Bucket_List_2007/large-cover.jpg",
+      "cast": [
+        {
+          "name": "Morgan Freeman",
+          "character_name": "Carter",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0000151.jpg",
+          "imdb_code": "0000151"
+        },
+        {
+          "name": "Rowena King",
+          "character_name": "Angelica",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0455242.jpg",
+          "imdb_code": "0455242"
+        },
+        {
+          "name": "Jack Nicholson",
+          "character_name": "Edward",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0000197.jpg",
+          "imdb_code": "0000197"
+        },
+        {
+          "name": "Richard McGonagle",
+          "character_name": "Board Chairman",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0569501.jpg",
+          "imdb_code": "0569501"
+        }
+      ],
+      "torrents": [
+        {
+          "url": "https://yts.lt/torrent/download/4980F9BDF963ECFBB93DDEFCBC254CF90861A47A?EISKRwIP2HsyovY1nSvxRjPom3CMZ5ujOfUgPQNVeJMB_84",
+          "hash": "4980F9BDF963ECFBB93DDEFCBC254CF90861A47A",
+          "quality": "720p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "647.44 MB",
+          "size_bytes": 678890045
+        },
+        {
+          "url": "https://yts.lt/torrent/download/EDBDF3345D11B04DFF3C9312A79AA86BE144F5D2?EISKRwIP2HsyovY1nSvxRjPom3CMZ5ujOfUgPQNVeJMB_84",
+          "hash": "EDBDF3345D11B04DFF3C9312A79AA86BE144F5D2",
+          "quality": "1080p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "1.50 GB",
+          "size_bytes": 1610612736
+        }
+      ]
+    }
+  },
+  {
+    "title": "Cloudy with a Chance of Meatballs (2009)",
+    "year": 2009,
+    "subtitle_list": [
+      {
+        "id": 13478286,
+        "filename": "Cloudy with a Chance of Meatballs 2009 albshare",
+        "download_link": "https://dl.opensubtitles.org/en/download/sub/13478286"
+      }
+    ],
+    "date_uploaded": "2026-01-06 17:00:25",
+    "yts_data": {
+      "id": 734,
+      "url": "https://yts.lt/movies/cloudy-with-a-chance-of-meatballs-2009?QBIo-oqJLzI5BZy_KMdfFrkkyyJsu_o81lp0bRhveZD5MtM",
+      "imdb_code": "tt0844471",
+      "title": "Cloudy with a Chance of Meatballs",
+      "title_english": "Cloudy with a Chance of Meatballs",
+      "title_long": "Cloudy with a Chance of Meatballs (2009)",
+      "slug": "cloudy-with-a-chance-of-meatballs-2009",
+      "year": 2009,
+      "rating": 6.9,
+      "runtime": 90,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Animation",
+        "Comedy",
+        "Family",
+        "Fantasy",
+        "News",
+        "Romance",
+        "Sci-Fi"
+      ],
+      "like_count": 169,
+      "description_intro": "Flint Lockwood thinks he's a genius. But none of the things he invented are things that make sense or are useful. However, he has the support of his mother but when she dies, he's left alone with his father who thinks he should give it up. When the community that he lives in is in an economic crisis because their primary source of income, a sardine cannery, was shut down, Flint decides to try his latest invention, a machine that can turn water into food. But something goes wrong and the machine ends up in the atmosphere. Later it starts raining food. The shifty mayor tries to use this as a way to help their community, but when Flint senses something wrong with the machine, the mayor convinces him to ignore it. However, as Flint predicts, chaos ensues.—rcs0411@yahoo.com",
+      "description_full": "Një shkencëtar lokal shpesh konsiderohet si dështak derisa shpik një makinë që mund të bëjë ushqimin të bjerë nga qielli. Por ai nuk e di që gjërat janë gati të marrin një kthesë për keq.",
+      "yt_trailer_code": "BPH0ct2oXBg",
+      "language": "en",
+      "mpa_rating": "",
+      "background_image": "https://yts.lt/assets/images/movies/Cloudy_with_a_Chance_of_Meatballs_2009/background.jpg",
+      "small_cover_image": "https://yts.lt/assets/images/movies/Cloudy_with_a_Chance_of_Meatballs_2009/small-cover.jpg",
+      "medium_cover_image": "https://yts.lt/assets/images/movies/Cloudy_with_a_Chance_of_Meatballs_2009/medium-cover.jpg",
+      "large_cover_image": "https://yts.lt/assets/images/movies/Cloudy_with_a_Chance_of_Meatballs_2009/large-cover.jpg",
+      "cast": [
+        {
+          "name": "Jim Ward",
+          "character_name": "Various",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0911589.jpg",
+          "imdb_code": "0911589"
+        },
+        {
+          "name": "Andy Samberg",
+          "character_name": "'Baby' Brent",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm1676221.jpg",
+          "imdb_code": "1676221"
+        },
+        {
+          "name": "Anna Faris",
+          "character_name": "Sam Sparks",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0267506.jpg",
+          "imdb_code": "0267506"
+        },
+        {
+          "name": "Michael Bell",
+          "character_name": "Man #12",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm0068407.jpg",
+          "imdb_code": "0068407"
+        }
+      ],
+      "torrents": [
+        {
+          "url": "https://yts.lt/torrent/download/361DF0E7C6CDA47C2DE6E0B694CC543E88827962?QBIo-oqJLzI5BZy_KMdfFrkkyyJsu_o81lp0bRhveZD5MtM",
+          "hash": "361DF0E7C6CDA47C2DE6E0B694CC543E88827962",
+          "quality": "3D",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "1.41 GB",
+          "size_bytes": 1513975972
+        },
+        {
+          "url": "https://yts.lt/torrent/download/C5BE3DC0239C0B08D0F941B68F178D0F74B4A9E1?QBIo-oqJLzI5BZy_KMdfFrkkyyJsu_o81lp0bRhveZD5MtM",
+          "hash": "C5BE3DC0239C0B08D0F941B68F178D0F74B4A9E1",
+          "quality": "720p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "550.99 MB",
+          "size_bytes": 577754890
+        },
+        {
+          "url": "https://yts.lt/torrent/download/8EA78B369DDD048FA61A4CCEABBFA6B56D675146?QBIo-oqJLzI5BZy_KMdfFrkkyyJsu_o81lp0bRhveZD5MtM",
+          "hash": "8EA78B369DDD048FA61A4CCEABBFA6B56D675146",
+          "quality": "1080p",
+          "type": "bluray",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "1.36 GB",
+          "size_bytes": 1460288881
+        }
+      ]
+    }
+  },
+  {
+    "title": "The Descent (2005)",
+    "year": 2005,
+    "subtitle_list": [
+      {
+        "id": 13478307,
+        "filename": "The Descent 2005 albshare",
+        "download_link": "https://dl.opensubtitles.org/en/download/sub/13478307"
+      }
+    ],
+    "date_uploaded": "2026-01-06 17:00:21",
+    "yts_data": {
+      "id": 3194,
+      "url": "https://yts.lt/movies/the-descent-2005?XoLNVd8anhkS6XhGg7fByuVxk1hKOJhJO-WAXqe816jjv7k",
+      "imdb_code": "tt0435625",
+      "title": "The Descent",
+      "title_english": "The Descent",
+      "title_long": "The Descent (2005)",
+      "slug": "the-descent-2005",
+      "year": 2005,
+      "rating": 7.2,
+      "runtime": 99,
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Horror",
+        "Sci-Fi",
+        "Thriller"
+      ],
+      "like_count": 190,
+      "description_intro": "A woman goes on vacation with her friends after her husband and daughter encounter a tragic accident. One year later she goes hiking with her friends and they get trapped in the cave. With a lack of supply, they struggle to survive and they meet strange blood thirsty creatures.—Lien Dang",
+      "description_full": "Një ekspeditë speleologjike shkon tmerrësisht keq kur gjashtë eksploratorë ngecin të bllokuar dhe në fund ndiqen nga një lloj i çuditshëm grabitqarësh.",
+      "yt_trailer_code": "vJ0Kg8UyHK0",
+      "language": "en",
+      "mpa_rating": "",
+      "background_image": "https://yts.lt/assets/images/movies/The_Descent_2005/background.jpg",
+      "small_cover_image": "https://yts.lt/assets/images/movies/The_Descent_2005/small-cover.jpg",
+      "medium_cover_image": "https://yts.lt/assets/images/movies/The_Descent_2005/medium-cover.jpg",
+      "large_cover_image": "https://yts.lt/assets/images/movies/The_Descent_2005/large-cover.jpg",
+      "cast": [
+        {
+          "name": "MyAnna Buring",
+          "character_name": "Sam",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm1769728.jpg",
+          "imdb_code": "1769728"
+        },
+        {
+          "name": "Tristan Matthiae",
+          "character_name": "Crawler",
+          "url_small_image": "https://yts.lt/assets/images/actors/thumb/nm1276598.jpg",
+          "imdb_code": "1276598"
+        },
+        {
+          "name": "Nora-Jane Noone",
+          "character_name": "Holly",
+          "imdb_code": "1172901"
+        },
+        {
+          "name": "Natalie Mendoza",
+          "character_name": "Juno",
+          "imdb_code": "0413238"
+        }
+      ],
+      "torrents": [
+        {
+          "url": "https://yts.lt/torrent/download/5A8F6F94CF7844439CB12747F331DEFB7DE4BC5D?XoLNVd8anhkS6XhGg7fByuVxk1hKOJhJO-WAXqe816jjv7k",
+          "hash": "5A8F6F94CF7844439CB12747F331DEFB7DE4BC5D",
+          "quality": "720p",
+          "type": "bluray",
+          "is_repack": "1",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "917.44 MB",
+          "size_bytes": 962005565
+        },
+        {
+          "url": "https://yts.lt/torrent/download/1B70C84BD49E7079B0347A6DD3045EBFAF0515E1?XoLNVd8anhkS6XhGg7fByuVxk1hKOJhJO-WAXqe816jjv7k",
+          "hash": "1B70C84BD49E7079B0347A6DD3045EBFAF0515E1",
+          "quality": "1080p",
+          "type": "bluray",
+          "is_repack": "1",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "5.1",
+          "size": "1.84 GB",
+          "size_bytes": 1975684956
+        }
+      ]
+    }
+  },
+  {
     "title": "Hotel Rwanda (2004)",
     "year": 2004,
     "subtitle_list": [
