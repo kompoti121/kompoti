@@ -61,15 +61,14 @@ def fetch_yts_movie(imdb_id: str) -> Optional[Dict[str, Any]]:
         return None
 
 
-def fetch_imdb_plot(imdb_id: str) -> Optional[str]:
-    """Fetch plot from IMDb API."""
+def fetch_imdb_data(imdb_id: str) -> Optional[Dict[str, Any]]:
+    """Fetch movie data from IMDb API."""
     try:
         url = f"{IMDB_API_BASE}/titles/{imdb_id}"
-        print(f"  [INFO] Fetching IMDb plot for {imdb_id}: {url}")
+        print(f"  [INFO] Fetching IMDb data for {imdb_id}: {url}")
         resp = requests.get(url, headers={"accept": "application/json"}, timeout=10)
         resp.raise_for_status()
-        data = resp.json()
-        return data.get("plot")
+        return resp.json()
     except Exception as e:
         print(f"  [ERROR] IMDb API error: {e}")
         return None
@@ -288,7 +287,8 @@ def main():
                                 yts_data["description_full"] = clean_text(yts_data["description_full"])
                             
                             time.sleep(0.5)
-                            plot_en = fetch_imdb_plot(imdb_id)
+                            imdb_full_data = fetch_imdb_data(imdb_id)
+                            plot_en = imdb_full_data.get("plot") if imdb_full_data else None
                             
                             if plot_en:
                                 api_key = os.environ.get("GEMINI_API_KEY")
@@ -309,8 +309,17 @@ def main():
                                 "year": yts_data.get("year"),
                                 "subtitle_list": [sub_item],
                                 "date_uploaded": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
-                                "yts_data": yts_data,
                             }
+                            
+                            # Featured logic
+                            movie_year = yts_data.get("year")
+                            if movie_year in [2025, 2026] and imdb_full_data:
+                                vote_count = imdb_full_data.get("rating", {}).get("voteCount")
+                                if vote_count and vote_count > 7500:
+                                    entry["is_featured"] = True
+                                    print(f"  [FEATURED] Movie {cleaned_title} is featured (Votes: {vote_count})")
+
+                            entry["yts_data"] = yts_data
                             results[imdb_id] = entry
                             new_count += 1
                         else:

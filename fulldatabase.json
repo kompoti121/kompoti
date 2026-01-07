@@ -25,6 +25,7 @@
       }
     ],
     "date_uploaded": "2026-01-05 09:52:32",
+    "is_featured": true,
     "yts_data": {
       "id": 73249,
       "imdb_code": "tt19847976",
@@ -409,6 +410,7 @@
       }
     ],
     "date_uploaded": "2026-01-05 09:52:37",
+    "is_featured": true,
     "yts_data": {
       "id": 72937,
       "imdb_code": "tt27714581",
