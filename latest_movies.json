@@ -1,5 +1,83 @@
 [
   {
+    "title": "The Tiger (2025)",
+    "year": 2025,
+    "subtitle_list": [
+      {
+        "id": 13479979,
+        "filename": "The.Tank.2025.1080p.AMZN.WEB-DL.DDP5.1.H.264-KHN.shqip.SM",
+        "download_link": "https://dl.opensubtitles.org/en/download/sub/13479979"
+      }
+    ],
+    "date_uploaded": "2026-01-07 17:01:43",
+    "yts_data": {
+      "id": 73295,
+      "url": "https://yts.lt/movies/the-tiger-2025?ehRSIiEoTujrf_wB7ZknVuJAASGDhke0B1TjZW4yuPCIUw",
+      "imdb_code": "tt31495504",
+      "title": "The Tiger",
+      "title_english": "The Tiger",
+      "title_long": "The Tiger (2025)",
+      "slug": "the-tiger-2025",
+      "year": 2025,
+      "rating": 6.6,
+      "runtime": 116,
+      "genres": [
+        "Action",
+        "Drama",
+        "Thriller",
+        "War"
+      ],
+      "like_count": 14,
+      "description_intro": "",
+      "description_full": "Pesë anëtarët e ekuipazhit të një tanku gjerman Tiger dërgohen në një mision sekret shumë pas vijës së frontit, ku po zhvillohen luftime të ashpra. Të nxitur nga metamfetamina e Wehrmacht-it, misioni i tyre gjithnjë e më shumë shndërrohet në një udhëtim në zemër të errësirës.",
+      "yt_trailer_code": "4uZWlKGRZis",
+      "language": "de",
+      "mpa_rating": "",
+      "background_image": "https://yts.lt/assets/images/movies/the_tiger_2025/background.jpg",
+      "small_cover_image": "https://yts.lt/assets/images/movies/the_tiger_2025/small-cover.jpg",
+      "medium_cover_image": "https://yts.lt/assets/images/movies/the_tiger_2025/medium-cover.jpg",
+      "large_cover_image": "https://yts.lt/assets/images/movies/the_tiger_2025/large-cover.jpg",
+      "torrents": [
+        {
+          "url": "https://yts.lt/torrent/download/61F66E5B5C2CC575B46A80DD3B1139E9ACAAE591?ehRSIiEoTujrf_wB7ZknVuJAASGDhke0B1TjZW4yuPCIUw",
+          "hash": "61F66E5B5C2CC575B46A80DD3B1139E9ACAAE591",
+          "quality": "720p",
+          "type": "web",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "2.0",
+          "size": "1.06 GB",
+          "size_bytes": 1138166333
+        },
+        {
+          "url": "https://yts.lt/torrent/download/6DC8F46B318DFD5E7BB6DC6EFBCA754F75845960?ehRSIiEoTujrf_wB7ZknVuJAASGDhke0B1TjZW4yuPCIUw",
+          "hash": "6DC8F46B318DFD5E7BB6DC6EFBCA754F75845960",
+          "quality": "1080p",
+          "type": "web",
+          "is_repack": "0",
+          "video_codec": "x264",
+          "bit_depth": "8",
+          "audio_channels": "5.1",
+          "size": "2.18 GB",
+          "size_bytes": 2340757176
+        },
+        {
+          "url": "https://yts.lt/torrent/download/A42A0CE1D59AC9729ECB14DFE272F02F081CF17A?ehRSIiEoTujrf_wB7ZknVuJAASGDhke0B1TjZW4yuPCIUw",
+          "hash": "A42A0CE1D59AC9729ECB14DFE272F02F081CF17A",
+          "quality": "1080p",
+          "type": "web",
+          "is_repack": "0",
+          "video_codec": "x265",
+          "bit_depth": "10",
+          "audio_channels": "5.1",
+          "size": "1.97 GB",
+          "size_bytes": 2115271393
+        }
+      ]
+    }
+  },
+  {
     "title": "Put Your Soul on Your Hand and Walk (2025)",
     "year": 2025,
     "subtitle_list": [
