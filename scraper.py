@@ -15,11 +15,96 @@ import cloudscraper
 import requests
 from bs4 import BeautifulSoup
 
+
 # Constants
-YTS_API_BASE = "https://yts.lt/api/v2"
+YTS_API_BASE = "https://yts.lt/api/v2"  # Will be updated dynamically
 IMDB_API_BASE = "https://api.imdbapi.dev"
 OUTPUT_PATH = "fulldatabase.json"
 LATEST_PATH = "latest_movies.json"
+
+
+def get_current_yts_domain() -> str:
+    """Fetch the current official YTS domain from yifystatus.com."""
+    try:
+        scraper = cloudscraper.create_scraper()
+        resp = scraper.get("https://yifystatus.com/")
+        if resp.status_code == 200:
+            soup = BeautifulSoup(resp.text, "lxml")
+            # Look for "Current official domain" text
+            target_text = soup.find(string=re.compile(r"Current official domain"))
+            if target_text:
+                # The next sibling or parent might contain the link
+                # Structure is usually: <span>Current official domain: <a href="...">YTS.LT</a></span>
+                parent = target_text.find_parent()
+                link = parent.find("a") if parent else None
+                if link and link.get("href"):
+                    domain = link.get("href").rstrip("/")
+                    print(f"  [INFO] Detected global YTS domain: {domain}")
+                    return domain
+    except Exception as e:
+        print(f"  [WARN] Failed to fetch YTS domain from yifystatus.com: {e}")
+    
+    print("  [WARN] Fallback to default YTS domain: https://yts.lt")
+    return "https://yts.lt"
+
+
+def make_relative(url: str, base_url: str) -> str:
+    """Convert an absolute URL to a relative one if it matches the base URL."""
+    if not url:
+        return url
+    if url.startswith(base_url):
+        return url[len(base_url):]
+    return url
+
+
+def clean_yts_data(data: Dict[str, Any], base_url: str) -> Dict[str, Any]:
+    """Clean YTS data and convert URLs to relative paths."""
+    # Convert main fields
+    fields_to_relativize = [
+        "url",
+        "background_image", 
+        "small_cover_image", 
+        "medium_cover_image", 
+        "large_cover_image"
+    ]
+    
+    for field in fields_to_relativize:
+        if data.get(field):
+            data[field] = make_relative(data[field], base_url)
+            
+    # Convert screenshots
+    for i in range(1, 4):
+        key = f"large_screenshot_image{i}"
+        if data.get(key):
+            data[key] = make_relative(data[key], base_url)
+        key = f"medium_screenshot_image{i}"
+        if data.get(key):
+            data[key] = make_relative(data[key], base_url)
+
+    # Convert torrents
+    if data.get("torrents"):
+        for torrent in data["torrents"]:
+            if torrent.get("url"):
+                torrent["url"] = make_relative(torrent["url"], base_url)
+                
+    # Prune unnecessary fields
+    data.pop("date_uploaded", None)
+    data.pop("date_uploaded_unix", None)
+    data.pop("background_image_original", None)
+    
+    # Prune seeds/peers from torrents
+    if data.get("torrents"):
+        for torrent in data["torrents"]:
+            torrent.pop("seeds", None)
+            torrent.pop("peers", None)
+            torrent.pop("date_uploaded", None)
+            torrent.pop("date_uploaded_unix", None)
+
+    data["title"] = clean_text(data.get("title", ""))
+    if data.get("description_full"):
+        data["description_full"] = clean_text(data["description_full"])
+        
+    return data
 
 
 def clean_text(text: str) -> str:
@@ -193,10 +278,18 @@ def parse_subtitles(html: str) -> list:
 
 
 def main():
+    global YTS_API_BASE
+    
     args = sys.argv[1:]
     run_once = "--once" in args
     
+    # 1. Fetch current YTS domian
+    current_yts_url = get_current_yts_domain()
+    YTS_API_BASE = f"{current_yts_url}/api/v2"
+    
     print("=== Subtitle Monitor Daemon (Python) ===")
+    print(f"Using YTS Domain: {current_yts_url}")
+    
     if run_once:
         print("Mode: Single Run (GitHub Actions)")
     else:
@@ -206,8 +299,16 @@ def main():
     results: Dict[str, Any] = {}
     if os.path.exists(OUTPUT_PATH):
         print(f"Loading existing progress from {OUTPUT_PATH}...")
-        with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
-            results = json.load(f)
+        try:
+            with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
+                loaded_data = json.load(f)
+                # Handle old vs new format
+                if "database" in loaded_data:
+                    results = loaded_data["database"]
+                else:
+                    results = loaded_data
+        except json.JSONDecodeError:
+            print("  [WARN] Failed to decode existing database. Starting fresh.")
     
     print(f"Loaded database with {len(results)} movies.")
     
@@ -222,7 +323,7 @@ def main():
     
     while True:
         now = datetime.now()
-        print(f"\n[{now.strftime('%Y-%m-%d %H:%M:%S')}] Checking for updates...")
+        print(f"\\n[{now.strftime('%Y-%m-%d %H:%M:%S')}] Checking for updates...")
         
         search_url = "https://www.opensubtitles.org/en/search/sublanguageid-alb/searchonlymovies-on/offset-0/sort-5/asc-0"
         
@@ -265,26 +366,8 @@ def main():
                         yts_data = fetch_yts_movie(imdb_id)
                         
                         if yts_data:
-                            # Prune unnecessary fields to save space
-                            yts_data.pop("date_uploaded", None)
-                            yts_data.pop("date_uploaded_unix", None)
-                            yts_data.pop("background_image_original", None)
-                            
-                            # Prune screenshots if they exist
-                            for i in range(1, 4):
-                                yts_data.pop(f"medium_screenshot_image{i}", None)
-                                yts_data.pop(f"large_screenshot_image{i}", None)
-
-                            if yts_data.get("torrents"):
-                                for torrent in yts_data["torrents"]:
-                                    torrent.pop("seeds", None)
-                                    torrent.pop("peers", None)
-                                    torrent.pop("date_uploaded", None)
-                                    torrent.pop("date_uploaded_unix", None)
-
-                            yts_data["title"] = clean_text(yts_data.get("title", ""))
-                            if yts_data.get("description_full"):
-                                yts_data["description_full"] = clean_text(yts_data["description_full"])
+                            # Clean and relativize
+                            yts_data = clean_yts_data(yts_data, current_yts_url)
                             
                             time.sleep(0.5)
                             imdb_full_data = fetch_imdb_data(imdb_id)
@@ -318,7 +401,7 @@ def main():
                                 if vote_count and vote_count > 7500:
                                     entry["is_featured"] = True
                                     print(f"  [FEATURED] Movie {cleaned_title} is featured (Votes: {vote_count})")
-
+                                    
                             entry["yts_data"] = yts_data
                             results[imdb_id] = entry
                             new_count += 1
@@ -330,21 +413,40 @@ def main():
                 
                 if new_count > 0:
                     print(f"Found {new_count} new items. Saving database...")
+                    
+                    # Normalize all data to relative paths
+                    for mid, entry in results.items():
+                        if entry.get("yts_data"):
+                            entry["yts_data"] = clean_yts_data(entry["yts_data"], current_yts_url)
+                    
+                    full_output = {
+                        "yts_url": current_yts_url,
+                        "database": results
+                    }
+                    
                     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-                        json.dump(results, f, indent=2, ensure_ascii=False)
+                        json.dump(full_output, f, indent=2, ensure_ascii=False)
                     
                     # Generate latest feed
                     print("Generating latest_movies.json...")
                     all_movies = list(results.values())
                     all_movies.sort(key=lambda x: x.get("date_uploaded", ""), reverse=True)
-                    latest = all_movies[:50]
+                    latest_list = all_movies[:50]
+                    
+                    latest_output = {
+                        "yts_url": current_yts_url,
+                        "movies": latest_list
+                    }
+                    
                     with open(LATEST_PATH, "w", encoding="utf-8") as f:
-                        json.dump(latest, f, indent=2, ensure_ascii=False)
+                        json.dump(latest_output, f, indent=2, ensure_ascii=False)
                 else:
                     print("No new items found.")
         
         except Exception as e:
             print(f"Error fetching updates: {e}")
+            import traceback
+            traceback.print_exc()
         
         if run_once:
             print("Single run complete. Exiting.")
