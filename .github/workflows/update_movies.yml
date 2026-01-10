@@ -48,10 +48,20 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cargo-
       
+      - name: Cache Publisher Data
+        uses: actions/cache@v3
+        with:
+          path: publisher/publisher_data
+          key: publisher-data-${{ github.run_id }}
+          restore-keys: |
+            publisher-data-
+      
       - name: Publish to Iroh Network
         working-directory: ./publisher
+        timeout-minutes: 2
         env:
           PUBLISHER_SECRET: ${{ secrets.PUBLISHER_SECRET }}
+          N0DES_API_SECRET: ${{ secrets.N0DES_API_SECRET }}
         run: |
           mkdir -p publisher_data
           if [ -n "$PUBLISHER_SECRET" ]; then
