@@ -28,26 +28,9 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scraper.py
-        # Expected output: latest_movies.json
 
       # ---------------------------------------------------------
-      # STEP 2: Connect VPN (PROTECT PUBLISHER IDENTITY)
-      # ---------------------------------------------------------
-      - name: Install & Connect NordVPN
-        env:
-          NORDVPN_TOKEN: ${{ secrets.NORDVPN_TOKEN }}
-        run: |
-          sudo wget -qnc https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
-          sudo dpkg -i ./nordvpn-release_1.0.0_all.deb
-          sudo apt-get update
-          sudo apt-get install -y nordvpn
-          sudo usermod -aG nordvpn $(whoami)
-          # Login and Connect
-          nordvpn login --token "$NORDVPN_TOKEN"
-          nordvpn connect Switzerland
-
-      # ---------------------------------------------------------
-      # STEP 3: Publish (SECURE CONNECTION)
+      # STEP 2: Publish (DIRECT CONNECTION - NO VPN)
       # ---------------------------------------------------------
       - name: Set up Rust
         uses: actions-rs/toolchain@v1
@@ -78,9 +61,5 @@ jobs:
              echo "WARNING: No PUBLISHER_SECRET found."
           fi
           
-          # This command now runs through the Swiss VPN Tunnel
+          # DIRECT CONNECTION (No VPN)
           cargo run --release -- ingest ../latest_movies.json
-          
-      - name: Disconnect VPN
-        if: always()
-        run: nordvpn disconnect || true
