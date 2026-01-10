@@ -57,38 +57,7 @@ jobs:
           if [ -n "$PUBLISHER_SECRET" ]; then
              echo "Importing Secret Key..."
              echo "Creating secret import script..."
-             cat << 'EOF' > import_secret.py
-             import os
-             import binascii
-             import sys
-
-             try:
-                 path = "publisher_data/secret_key"
-                 secret = os.environ.get("PUBLISHER_SECRET", "")
-                 if not secret:
-                     print("Error: PUBLISHER_SECRET env var is empty")
-                     sys.exit(1)
-                     
-                 # Clean the secret
-                 hexval = secret.strip().replace(" ", "").replace("\n", "").replace("\r", "")
-                 print(f"Secret length: {len(hexval)}")
-                 
-                 if len(hexval) % 2 != 0:
-                     print("Error: Secret length is odd, cannot be hex string")
-                     sys.exit(1)
-                     
-                 try:
-                     data = binascii.unhexlify(hexval)
-                     with open(path, "wb") as f:
-                         f.write(data)
-                     print("Secret key imported successfully")
-                 except binascii.Error as e:
-                     print(f"Error decoding hex: {e}")
-                     sys.exit(1)
-             except Exception as e:
-                 print(f"Unexpected error: {e}")
-                 sys.exit(1)
-             EOF
+             echo "aW1wb3J0IG9zCmltcG9ydCBiaW5hc2NpaQppbXBvcnQgc3lzCgp0cnk6CiAgICBwYXRoID0gJ3B1Ymxpc2hlcl9kYXRhL3NlY3JldF9rZXknCiAgICBzZWNyZXQgPSBvcy5lbnZpcm9uLmdldCgnUFVCTElTSEVSX1NFQ1JFVCcsICcnKQogICAgaWYgbm90IHNlY3JldDoKICAgICAgICBwcmludCgnRXJyb3I6IFBVQkxJU0hFUl9TRUNSRVQgZW52IHZhciBpcyBlbXB0eScpCiAgICAgICAgc3lzLmV4aXQoMSkKICAgIAogICAgIyBDbGVhbiB0aGUgc2VjcmV0CiAgICBoZXh2YWwgPSBzZWNyZXQuc3RyaXAoKS5yZXBsYWNlKCcgJywgJycpLnJlcGxhY2UoJ1xuJywgJycpLnJlcGxhY2UoJ1xyJywgJycpCiAgICBwcmludChmJ1NlY3JldCBsZW5ndGg6IHtsZW4oaGV4dmFsKX0nKQogICAgCiAgICBpZiBsZW4oaGV4dmFsKSAlIDIgIT0gMDoKICAgICAgICBwcmludCgnRXJyb3I6IFNlY3JldCBsZW5ndGggaXMgb2RkLCBjYW5ub3QgYmUgaGV4IHN0cmluZycpCiAgICAgICAgc3lzLmV4aXQoMSkKICAgICAgICAKICAgIHRyeToKICAgICAgICBkYXRhID0gYmluYXNjaWkudW5oZXhsaWZ5KGhleHZhbCkKICAgICAgICB3aXRoIG9wZW4ocGF0aCwgJ3diJykgYXMgZjoKICAgICAgICAgICAgZi53cml0ZShkYXRhKQogICAgICAgIHByaW50KCdTZWNyZXQga2V5IGltcG9ydGVkIHN1Y2Nlc3NmdWxseScpCiAgICBleGNlcHQgYmluYXNjaWkuRXJyb3IgYXMgZToKICAgICAgICBwcmludChmJ0Vycm9yIGRlY29kaW5nIGhleDoge2V9JykKICAgICAgICBzeXMuZXhpdCgxKQpleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICBwcmludChmJ1VuZXhwZWN0ZWQgZXJyb3I6IHtlfScpCiAgICBzeXMuZXhpdCgxKQo=" | base64 -d > import_secret.py
              python3 import_secret.py
           else
              echo "WARNING: No PUBLISHER_SECRET found."
