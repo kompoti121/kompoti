@@ -26,7 +26,7 @@ jobs:
       
       - name: Run Scraper
         env:
-          GEMINI_API_KEY: \${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scraper.py --once
 
       # ---------------------------------------------------------
@@ -44,19 +44,50 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             publisher/target
-          key: \${{ runner.os }}-cargo-\${{ hashFiles('publisher/Cargo.lock') }}
+          key: ${{ runner.os }}-cargo-${{ hashFiles('publisher/Cargo.lock') }}
           restore-keys: |
-            \${{ runner.os }}-cargo-
+            ${{ runner.os }}-cargo-
       
       - name: Publish to Iroh Network
         working-directory: ./publisher
         env:
-          PUBLISHER_SECRET: \${{ secrets.PUBLISHER_SECRET }}
+          PUBLISHER_SECRET: ${{ secrets.PUBLISHER_SECRET }}
         run: |
           mkdir -p publisher_data
-          if [ -n "\$PUBLISHER_SECRET" ]; then
+          if [ -n "$PUBLISHER_SECRET" ]; then
              echo "Importing Secret Key..."
-             python3 -c "import os, binascii; path='publisher_data/secret_key'; hexval=os.environ['PUBLISHER_SECRET'].strip(); open(path, 'wb').write(binascii.unhexlify(hexval))"
+             python3 -c "
+             import os
+             import binascii
+             import sys
+
+             try:
+                 path = 'publisher_data/secret_key'
+                 secret = os.environ['PUBLISHER_SECRET']
+                 if not secret:
+                     print('Error: PUBLISHER_SECRET env var is empty')
+                     sys.exit(1)
+                     
+                 # Clean the secret
+                 hexval = secret.strip().replace(' ', '').replace('\\n', '').replace('\\r', '')
+                 print(f'Secret length: {len(hexval)}')
+                 
+                 if len(hexval) % 2 != 0:
+                     print('Error: Secret length is odd, cannot be hex string')
+                     sys.exit(1)
+                     
+                 try:
+                     data = binascii.unhexlify(hexval)
+                     with open(path, 'wb') as f:
+                         f.write(data)
+                     print('Secret key imported successfully')
+                 except binascii.Error as e:
+                     print(f'Error decoding hex: {e}')
+                     sys.exit(1)
+             except Exception as e:
+                 print(f'Unexpected error: {e}')
+                 sys.exit(1)
+             "
           else
              echo "WARNING: No PUBLISHER_SECRET found."
           fi
