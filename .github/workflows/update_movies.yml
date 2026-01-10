@@ -69,8 +69,14 @@ jobs:
           mkdir -p publisher_data
           if [ -n "$PUBLISHER_SECRET" ]; then
              echo "Importing Secret Key..."
-             echo "Creating secret import script..."
-             echo "aW1wb3J0IG9zCmltcG9ydCBiaW5hc2NpaQppbXBvcnQgc3lzCgp0cnk6CiAgICBwYXRoID0gJ3B1Ymxpc2hlcl9kYXRhL3NlY3JldF9rZXknCiAgICBzZWNyZXQgPSBvcy5lbnZpcm9uLmdldCgnUFVCTElTSEVSX1NFQ1JFVCcsICcnKQogICAgaWYgbm90IHNlY3JldDoKICAgICAgICBwcmludCgnRXJyb3I6IFBVQkxJU0hFUl9TRUNSRVQgZW52IHZhciBpcyBlbXB0eScpCiAgICAgICAgc3lzLmV4aXQoMSkKICAgIAogICAgIyBDbGVhbiB0aGUgc2VjcmV0CiAgICBoZXh2YWwgPSBzZWNyZXQuc3RyaXAoKS5yZXBsYWNlKCcgJywgJycpLnJlcGxhY2UoJwonLCAnJykucmVwbGFjZSgnDScsICcnKQogICAgcHJpbnQoZidTZWNyZXQgbGVuZ3RoOiB7bGVuKGhleHZhbCl9JykKICAgIAogICAgaWYgbGVuKGhleHZhbCkgJSAyICE9IDA6CiAgICAgICAgcHJpbnQoJ0Vycm9yOiBTZWNyZXQgbGVuZ3RoIGlzIG9kZCwgY2Fubm90IGJlIGhleCBzdHJpbmcnKQogICAgICAgIHN5cy5leGl0KDEpCiAgICAgICAgCiAgICB0cnk6CiAgICAgICAgZGF0YSA9IGJpbmFzY2lpLnVuaGV4bGlmeShoZXh2YWwpCiAgICAgICAgd2l0aCBvcGVuKHBhdGgsICd3YicpIGFzIGY6CiAgICAgICAgICAgIGYud3JpdGUoZGF0YSkKICAgICAgICBwcmludCgnU2VjcmV0IGtleSBpbXBvcnRlZCBzdWNjZXNzZnVsbHknKQogICAgZXhjZXB0IGJpbmFzY2lpLkVycm9yIGFzIGU6CiAgICAgICAgcHJpbnQoZidFcnJvciBkZWNvZGluZyBoZXg6IHtlfScpCiAgICAgICAgc3lzLmV4aXQoMSkKZXhjZXB0IEV4Y2VwdGlvbiBhcyBlOgogICAgcHJpbnQoZidVbmV4cGVjdGVkIGVycm9yOiB7ZX0nKQogICAgc3lzLmV4aXQoMSkKCg==" | base64 -d > import_secret.py
+             # Write script using printf to avoid heredoc/base64 issues
+             printf 'import os\nimport binascii\nimport sys\n\ntry:\n    path = "publisher_data/secret_key"\n    secret = os.environ.get("PUBLISHER_SECRET", "")\n    if not secret:\n        print("Error: PUBLISHER_SECRET empty")\n        sys.exit(1)\n    # Clean secret\n    hexval = secret.strip().replace(" ", "").replace("\\n", "").replace("\\r", "")\n    print(f"Secret length: {len(hexval)}")\n    if len(hexval) %% 2 != 0:\n        print("Error: Secret length odd")\n        sys.exit(1)\n    try:\n        data = binascii.unhexlify(hexval)\n        with open(path, "wb") as f:\n            f.write(data)\n        print("Success")\n    except Exception as e:\n        print(f"Hex error: {e}")\n        sys.exit(1)\nexcept Exception as e:\n    print(f"Error: {e}")\n    sys.exit(1)\n' > import_secret.py
+
+             # DEBUG: Show the file content
+             echo "--- DEBUG: import_secret.py content ---"
+             cat import_secret.py
+             echo "---------------------------------------"
+             
              python3 import_secret.py
           else
              echo "WARNING: No PUBLISHER_SECRET found."
