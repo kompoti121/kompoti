@@ -1,0 +1,63 @@
+name: Update Movies
+
+on:
+  schedule:
+    - cron: '0 */8 * * *' # Run every 8 hours
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # 1. Run Python Scraper (With Caching)
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          cache: 'pip' # Enable caching for pip dependencies
+      
+      - name: Install Python Deps
+        run: pip install -r requirements.txt
+      
+      - name: Run Scraper
+        run: python scraper.py
+        # Expected output: latest_movies.json
+
+      # 2. Run Rust Publisher (With Caching)
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      
+      - name: Cache Cargo
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            publisher/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('publisher/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+      
+      - name: Publish to Iroh Network
+        working-directory: ./publisher
+        env:
+          PUBLISHER_SECRET: ${{ secrets.PUBLISHER_SECRET }}
+        run: |
+          # Write secret key from env var to file expected by publisher
+          mkdir -p publisher_data
+          
+          # We need to handle the secret key safely.
+          if [ -n "$PUBLISHER_SECRET" ]; then
+             echo "Importing Secret Key..."
+             # Use python to decode hex to binary file
+             python3 -c "import os, binascii; path='publisher_data/secret_key'; hexval=os.environ['PUBLISHER_SECRET']; open(path, 'wb').write(binascii.unhexlify(hexval))"
+          else
+             echo "WARNING: No PUBLISHER_SECRET found. Generating new identity (Not persistent)."
+          fi
+          
+          cargo run --release -- ingest ../latest_movies.json
