@@ -56,7 +56,7 @@ jobs:
           mkdir -p publisher_data
           if [ -n "\$PUBLISHER_SECRET" ]; then
              echo "Importing Secret Key..."
-             python3 -c "import os, binascii; path='publisher_data/secret_key'; hexval=os.environ['PUBLISHER_SECRET']; open(path, 'wb').write(binascii.unhexlify(hexval))"
+             python3 -c "import os, binascii; path='publisher_data/secret_key'; hexval=os.environ['PUBLISHER_SECRET'].strip(); open(path, 'wb').write(binascii.unhexlify(hexval))"
           else
              echo "WARNING: No PUBLISHER_SECRET found."
           fi
