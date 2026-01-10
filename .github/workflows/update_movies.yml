@@ -56,9 +56,12 @@ jobs:
           restore-keys: |
             publisher-data-
       
-      - name: Publish to Iroh Network
+      - name: Build Publisher
         working-directory: ./publisher
-        timeout-minutes: 2
+        run: cargo build --release
+
+      - name: Publish to Iroh Network (2m limit)
+        working-directory: ./publisher
         env:
           PUBLISHER_SECRET: ${{ secrets.PUBLISHER_SECRET }}
           N0DES_API_SECRET: ${{ secrets.N0DES_API_SECRET }}
@@ -67,11 +70,12 @@ jobs:
           if [ -n "$PUBLISHER_SECRET" ]; then
              echo "Importing Secret Key..."
              echo "Creating secret import script..."
-             echo "aW1wb3J0IG9zCmltcG9ydCBiaW5hc2NpaQppbXBvcnQgc3lzCgp0cnk6CiAgICBwYXRoID0gJ3B1Ymxpc2hlcl9kYXRhL3NlY3JldF9rZXknCiAgICBzZWNyZXQgPSBvcy5lbnZpcm9uLmdldCgnUFVCTElTSEVSX1NFQ1JFVCcsICcnKQogICAgaWYgbm90IHNlY3JldDoKICAgICAgICBwcmludCgnRXJyb3I6IFBVQkxJU0hFUl9TRUNSRVQgZW52IHZhciBpcyBlbXB0eScpCiAgICAgICAgc3lzLmV4aXQoMSkKICAgIAogICAgIyBDbGVhbiB0aGUgc2VjcmV0CiAgICBoZXh2YWwgPSBzZWNyZXQuc3RyaXAoKS5yZXBsYWNlKCcgJywgJycpLnJlcGxhY2UoJ1xuJywgJycpLnJlcGxhY2UoJ1xyJywgJycpCiAgICBwcmludChmJ1NlY3JldCBsZW5ndGg6IHtsZW4oaGV4dmFsKX0nKQogICAgCiAgICBpZiBsZW4oaGV4dmFsKSAlIDIgIT0gMDoKICAgICAgICBwcmludCgnRXJyb3I6IFNlY3JldCBsZW5ndGggaXMgb2RkLCBjYW5ub3QgYmUgaGV4IHN0cmluZycpCiAgICAgICAgc3lzLmV4aXQoMSkKICAgICAgICAKICAgIHRyeToKICAgICAgICBkYXRhID0gYmluYXNjaWkudW5oZXhsaWZ5KGhleHZhbCkKICAgICAgICB3aXRoIG9wZW4ocGF0aCwgJ3diJykgYXMgZjoKICAgICAgICAgICAgZi53cml0ZShkYXRhKQogICAgICAgIHByaW50KCdTZWNyZXQga2V5IGltcG9ydGVkIHN1Y2Nlc3NmdWxseScpCiAgICBleGNlcHQgYmluYXNjaWkuRXJyb3IgYXMgZToKICAgICAgICBwcmludChmJ0Vycm9yIGRlY29kaW5nIGhleDoge2V9JykKICAgICAgICBzeXMuZXhpdCgxKQpleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICBwcmludChmJ1VuZXhwZWN0ZWQgZXJyb3I6IHtlfScpCiAgICBzeXMuZXhpdCgxKQo=" | base64 -d > import_secret.py
+             echo "aW1wb3J0IG9zCmltcG9ydCBiaW5hc2NpaQppbXBvcnQgc3lzCgp0cnk6CiAgICBwYXRoID0gJ3B1Ymxpc2hlcl9kYXRhL3NlY3JldF9rZXknCiAgICBzZWNyZXQgPSBvcy5lbnZpcm9uLmdldCgnUFVCTElTSEVSX1NFQ1JFVCcsICcnKQogICAgaWYgbm90IHNlY3JldDoKICAgICAgICBwcmludCgnRXJyb3I6IFBVQkxJU0hFUl9TRUNSRVQgZW52IHZhciBpcyBlbXB0eScpCiAgICAgICAgc3lzLmV4aXQoMSkKICAgIAogICAgIyBDbGVhbiB0aGUgc2VjcmV0CiAgICBoZXh2YWwgPSBzZWNyZXQuc3RyaXAoKS5yZXBsYWNlKCcgJywgJycpLnJlcGxhY2UoJ1xuJywgJycpLnJlcGxhY2UoJ1xyJywgJycpCiAgICBwcmludChmJ1NlY3JldCBsZW5ndGg6IHtsZW4oaGV4dmFsKX0nKQogICAgCiAgICBpZiBsZW4oaGV4dmFsKSAlIDIgIT0gMDoKICAgICAgICBwcmludCgnRXJyb3I6IFNlY3JldCBsZW5ndGggaXMgb2RkLCBjYW5ub3QgYmUgaGV4IHN0cmluZycpCiAgICAgICAgc3lzLmV4aXQoMSkKICAgICAgICAKICAgIHRyeToKICAgICAgICBkYXRhID0gYmluYXNjaWkudW5oZXhsaWZ5KGhleHZhbCkKICAgICAgICB3aXRoIG9wZW4ocGF0aCwgJ3diJykgYXMgZjoKICAgICAgICAgICAgZi53cml0ZShkYXRhKQogICAgICAgIHByaW50KCdTZWNyZXQga2V5IGltcG9ydGVkIHN1Y2Nlc3NmdWxseScpCiAgICBleGNlcHQgYmluYXNjaWkudW5oZXhsaWZ5KGhleHZhbCkKICAgICAgICBwcmludChmJ0Vycm9yIGRlY29kaW5nIGhleDoge2V9JykKICAgICAgICBzeXMuZXhpdCgxKQpleGNlcHQgRXhjZXB0aW9uIGFzIGU6CiAgICBwcmludChmJ1VuZXhwZWN0ZWQgZXJyb3I6IHtlfScpCiAgICBzeXMuZXhpdCgxKQo=" | base64 -d > import_secret.py
              python3 import_secret.py
           else
              echo "WARNING: No PUBLISHER_SECRET found."
           fi
           
-          # DIRECT CONNECTION (No VPN)
-          cargo run --release -- ingest ../latest_movies.json
+          # Run binary with 2 minute timeout. 
+          # Exit code 124 means timeout occurred (success for us).
+          timeout 2m ./target/release/kinoteka-publisher ingest ../latest_movies.json || [ $? -eq 124 ]
